@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .flex-container{
+        border: 1px solid red;
+        width: 80%;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+    .flex-item{
+        width: 100px;
+        height: 100px;
+        border:1px solid green;
+        background-color: aqua;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;   
+    }
+    /*flex-dirction code */
+    .flex-direction{
+        border:1px solid red;
+        display: flex;
+        justify-content: space-around;
+        flex-direction:row-reverse
+    }
+    .item-direction{
+        border:1px solid green;
+        margin: 5px;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        background-color: gray;
+    }
+    /*code for flex-wrap*/
+    .flex-wrap{
+        border: 1px solid red;
+        display: flex;
+        flex-wrap:wrap;
+
+    }
+    .item-wrap{
+        border:1px solid green;
+        margin: 5px;
+        padding: 10px;
+    }    
+    /*code for flex start and end */
+    .container{
+        border: 1px solid red;
+        display: flex;
+    }
+    .start-item{
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid black;
+        background-color: antiquewhite;
+    }
+    .end-item{
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid black;
+        background-color:blueviolet;
+    }
+    .flex-start{
+        justify-content: flex-start;
+    }
+    .flex-end{
+        justify-content: flex-end;
+    }
+    /*code for grow and shrink */
+    .item-grow-shrink{
+        border: 1px solid black;
+        margin: 5px;
+        padding: 10px;
+        /* flex-grow: 1; */
+    }
+    .item-grow-shrink:nth-child(2){
+        flex-grow: 2;
+        flex-shrink: 1;
+    }
+</style>
+<body>
+    <h3>Example of Flex box</h3>
+    <div class="flex-container">
+        <div class="flex-item">Item1</div>
+        <div class="flex-item">Item2</div>
+        <div class="flex-item">Item3</div>
+        <div class="flex-item">Item4</div>
+    </div>
+    <hr>
+    <h3>Example of Flex directions</h3>
+    <div class="flex-direction">
+        <div class="item-direction">Item1</div>
+        <div class="item-direction">Item2</div>
+        <div class="item-direction">Item3</div>
+        <div class="item-direction">Item4</div>
+    </div>
+    <hr>
+    <h3>Example of flex wrap</h3>
+    <div class="flex-wrap">
+        <div class="item-wrap">Item1</div>
+        <div class="item-wrap">Item2</div>
+        <div class="item-wrap">Item3</div>
+        <div class="item-wrap">Iten4</div>
+        <div class="item-wrap">Item5</div>
+        <div class="item-wrap">Item6</div>
+        <div class="item-wrap">Item7</div>
+        <div class="item-wrap">Item8</div>
+        <div class="item-wrap">Item9</div>
+    </div>
+    <hr>
+    <h3>Example of Flex start and end</h3>
+     <div class="container flex-start">
+        <div class="start-item">Item1</div>
+        <div class="start-item">Item2</div>
+        <div class="start-item">Item3</div>
+        <div class="start-item">Item4</div>
+     </div>
+     <div class="container flex-end">
+        <div class="end-item">Item1</div>
+        <div class="end-item">Item2</div>
+        <div class="end-item">Item3</div>
+        <div class="end-item">Item4</div>
+     </div>
+     <hr>
+     <h3>Example of flex grow and shrink</h3>
+     <div class="container">
+        <div class="item-grow-shrink">Item1</div>
+        <div class="item-grow-shrink">Item2</div>
+        <div class="item-grow-shrink">Item3</div>
+     </div>
+</body>
+</html>

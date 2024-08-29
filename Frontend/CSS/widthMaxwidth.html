@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: antiquewhite;
+        margin: 10px;
+    }
+    .container{
+        border: 1px solid red;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .fixed-width{
+        width: 400px;
+        background-color: #a0a0a0;
+    }
+    .max-width{
+        max-width: 600px;
+        background-color: #e0e0ee;
+    }
+    .resposive-width{
+        width: 100%;
+        max-width: 800px;
+        background-color: #b82828;
+    }
+</style>
+<body>
+    <h3>Example of Width and MaxWidth</h3>
+    <div class="container fixed-width">
+        Width will take the size of screen and it will not change it properties on responsive mode.<br>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum libero sint totam nobis maiores dicta.
+    </div>
+    <div class="container max-width">
+        max-width is resposive and it can grow and shrink on different mode .<br>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam natus nesciunt atque!
+    </div>
+    <div class="container resposive-width">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit animi a provident harum aperiam dolorem!
+    </div>
+</body>
+</html>

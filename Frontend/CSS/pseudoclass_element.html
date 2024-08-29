@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a:hover{
+        color: red;
+    }
+    .btn:active{
+        background-color: green;
+    }
+    .input-feild:focus{
+        border: 3px solid red;
+    }
+    ul li:nth-child(even){
+        background-color: #f0f0f0;
+    }
+    ul li:nth-child(odd){
+        background-color: aqua;
+    }
+    ul li:first-child{
+        font-size:30px ;
+    }
+    ul li:last-child{
+        color: red;
+    }
+    p::first-letter{
+        font-size: 2em;
+        color:red;
+    }
+    p::first-line{
+        color:green;
+        font-variant: small-caps;
+    }
+    p::before{
+        content: "Before message";
+        font-weight: 400;
+    }
+    p::after{
+        content: "After message";
+        font-style: italic;
+    }
+    p::selection{
+        background-color: yellow;
+    }
+</style>
+<body>
+    <h3>Example of Pseudo classes</h3>
+    <a href="#">Hover</a>
+    <button class="btn">Click me</button>
+    <input type="text" class="input-feild">
+    <ul>
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+        <li>four</li>
+        <li>five</li>
+    </ul>
+    <hr>
+    <h3>Psuedo elements</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis inventore laborum modi.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias deleniti cum sunt?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium explicabo officiis blanditiis?</p>
+</body>
+</html>

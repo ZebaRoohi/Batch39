@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>There are 3 condition checking operators</h3>
+    <ol>
+        <li>If condtion</li>
+        <li>if-else</li>
+        <li>Switch condition</li>
+    </ol>
+    <hr>
+    <h4>If condition</h4>
+    <p>The if statement is the most basic conditional statement. It evaluates a condition and, if the condition is true, it executes a block of code.</p>
+
+    <h4>If-else</h4>
+    <p>The if-else statement allows you to execute one block of code if the condition is true and another block if the condition is false.</p>
+    <h4>ternary Operator</h4>
+    <p>The ternary operator is a concise way to write an if-else statement in a single line.</p>
+    <h4>Switch Statement</h4>
+    <p>In JavaScript, the switch statement is a control flow statement that allows a program to evaluate an expression against multiple possible case values. It provides a more concise way to write multiple if-else statements when you want to compare a single value against several possible values.</p>
+</body>
+<script>
+//If conditon
+    let x=10
+    if(x>5){
+        console.log('X is greater')
+    }
+    let str=''
+    if(str==''){
+        console.log('string is empty')
+    }
+    let y=20
+    if(y%2==0){
+        console.log('y is even')
+    }
+    console.log('-------------------------')
+//if-else
+    // let num=10
+    // let num=parseInt(prompt('Enter the number'))
+    // if(num>5){
+    //     console.log('number is greater')
+    // }else{
+    //     console.log('number is lesser')
+    // }
+
+    //check number is +ve,-ve or zero
+    // let number=6
+    // if(number>0){
+    //     console.log('number is positive')
+    // }else if(number<0){
+    //     console.log('number is negative ')
+    // }else if(number==0){
+    //     console.log('number is equal')
+    // }else{
+    //     console.log('invalid number')
+    // }
+
+    //check the entered value is number or string
+    // let value='hello'
+    // if(typeof value=='number'){
+    //     console.log('You have entered the number')
+    // }else if(typeof value=='string'){
+    //     console.log('You have entered the string')
+    // }else{
+    //     console.log('Value entered is invalid')
+    // }
+
+    //check the grade of student
+    // let score=parseFloat(prompt('Enter your score'))
+    // let grade;
+    // if(score>=90){
+    //     grade='A';
+    //     console.log('Your grade is',grade)
+    // }else if(score>=80){
+    //     grade='B'
+    //     console.log('Your grade is',grade)
+    // }else if(score>=70){
+    //     grade='C'
+    //     console.log('Your grade is',grade)
+    // }else{
+    //     grade='Fail'
+    //     console.log('Yur grade is',grade)
+    // }
+
+
+//types of traingles
+    let a=2;
+    let b=3;
+    let c=1;
+    let traingle;
+
+    if(a===b && b===c && c===a){
+        traingle='Equilateral'
+        console.log('Equilateral traingle')
+    }else if(a===b || b===c || c===a){
+        traingle='Isosceles'
+        console.log('Isosceles triangle')
+    }else{
+        traingle='Scalene'
+        console.log('Scalene traingle')
+    }
+    
+//Display login status of user taking input from user
+    /*let username=prompt('Enter username')
+    let password=prompt('Enter password')
+
+    if(username=='john' && password=='john')
+    {
+        console.log('Welcome' +username)
+    }else if(username!=='john' && password!=='john'){
+        console.log('Incorrect user name and passowrd')
+    }else if(username=='john' && password!=='john'){
+        console.log('Enter correct password')
+    }else{
+        console.log('Enter correct username')
+    }*/
+
+  //Ternary operator
+   let num=12
+   let num_dis=(num>10)?'You number is greater':'Your number is lesser'
+   console.log(num_dis)
+
+   //Switch statement
+     let day='Tuesday'
+   // let day=prompt('Enter the day')
+    let msg;
+    switch(day){
+        case 'Monday'.toLowerCase():
+            msg='First day of the week'
+            break;
+        case 'Wednesday':
+            msg='Third day of the week'
+            break;
+        case 'Saturday':
+            msg='Weekend'
+            break;
+        default:
+            msg='Regular day of the week'
+    }
+    console.log(msg)
+
+//Multiple switch cases
+    let month='July'
+    let season;
+    switch(month){
+        case 'January':
+        case 'Febuaray':
+            season='Winter'
+            break;
+        case 'March':
+        case 'April':
+        case 'May':
+            season='summer'
+            break;
+        case 'June':
+        case'July':
+        season='rainy'
+        break;
+        default:
+            season='Invalid month'
+    }
+    console.log(season)
+
+//switch with conditions
+    let percentage=85
+    let grade;
+    if(percentage>=90){
+        grade='A+'
+    }else if(percentage>=80 && percentage<=90){
+        grade='A'
+    }else if(percentage>=70 && percentage<=80){
+        grade='B'
+    }else if(percentage>=60 && percentage<=70){
+        grade='C'
+    }else if(percentage>=50 && percentage<=60){
+        grade='D'
+    }else{
+        grade='Fail'
+    }
+    switch(grade){
+        case 'A+':
+            console.log('You score A+')
+            break;
+        case 'A':
+            console.log('You score A')
+            break;
+        case 'B':
+            console.log('You score B')
+            break;
+        case 'C':
+            console.log('You score C')
+            break;
+        case 'D':
+            console.log('You score D')
+            break;
+        default:
+            console.log('You failed')
+    }
+
+//switch with functions
+    function monday(){
+        return "First day of the week";
+    }
+    function wednesday(){
+        return "third day of the week";
+    }
+    function friday(){
+        return "fifth day of the week";
+    }
+    function daysOfWeek(day){
+        switch(day){
+            case 'Mon':
+                return monday();
+                break;
+            case 'Wed':
+                return wednesday();
+                break;
+            case 'Fri':
+                return friday();
+                break;
+            default:
+                return "Have a good day";
+        }
+    }
+    console.log(daysOfWeek('Mon'))
+</script>
+</html>

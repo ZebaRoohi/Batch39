@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Data types in Js</h3>
+    <p>There are two types of DT:1.Primitive <br> 2.Non Primitive</p>
+    <p>1.Primitive:Its is immutable and it stores single value,Types of primtive data types</p>
+    <ol>
+        <li>Numbers</li>
+        <li>Strings</li>
+        <li>Boolean</li>
+        <li>Null</li>
+        <li>Undefine</li>
+        <li>Symbol</li>
+    </ol>
+  <h3>Non-Primitive DT:complex,stores multiple values,mutable,it returns object DT</h3>
+  <ol>
+    <li>Object</li>
+    <li>Arrays</li>
+    <li>Date</li>
+  </ol>
+
+</body>
+
+<script>
+    //Number
+    var a=10
+    document.write('value of a is',a)
+    console.log('value of a is',a)
+
+//You can reassign the value
+   var a=13
+//    document.write('value of new a',a)
+      console.log('value of new a is',a)
+
+    let b=15
+    document.write('value of b is ',b)
+    console.log('value of b is',b)
+
+// You cannot reassign the same value
+    // let b=10
+    // console.log('value of new b is',b)
+
+    const c=20
+    document.write('value of c is',c)
+    console.log('value of c is',c)
+
+// You cannot reassign the same value
+    // const c=25
+    // console.log('value of new c is',c)
+
+//checking the DT:
+    let x=15
+    document.write('value of x is',x,'type of x is',typeof(x))
+    console.log('value of x is',x,'type of x is',typeof(x))
+
+    let y=-20.7
+    console.log('value of y is',y,'type of y is',typeof(y))
+
+//String DT
+    let str='Hello world'
+    console.log('Str is',str,'type of str is',typeof(str))
+
+    let doubstr="Hello world"
+    console.log('Str with double quotes',doubstr,'typeof str is',typeof(doubstr))
+
+//Boolean DT
+    let isTrue=true //1
+    let isFalse=false //0
+
+    console.log('Value of isTrue is',isTrue,'type of isTrue is',typeof(isTrue))
+    console.log('Value of isFalse is',isFalse,'type of isFalse is',typeof(isFalse))
+
+    //interview questions
+    console.log(true+true)
+    console.log(true+false)
+
+//Null DT
+    let nullDT=null
+    console.log('value of null is',nullDT,typeof(nullDT)) //Dt is object
+
+//undefined DT:Whose value is not define
+    let undefinedDT;
+    console.log('Value of undefine Dt is',undefinedDT,'type of undefine is',typeof(undefinedDT))
+
+//Symbol:stores unique identifiers or unique values
+    let symbolDT=Symbol()
+    let symbolDT1=Symbol('unique')
+
+    console.log('Value of symbol is',symbolDT1,'type of symbol is',typeof(symbolDT1))
+
+// Non-prmitive:mutable,complex,can add multiple values
+    let person={
+        name:'John',
+        age:23,
+        address:'Telenagana'
+    }
+    console.log('Value of person is',person,'type of person is',typeof(person))
+
+//arrays
+    let arr=[1,2,3,4,5]
+    console.log('value of arr is',arr,'type of arr is',typeof(arr))
+
+//date
+    let currentDate=new Date()
+    console.log('date value is',currentDate,'type of date is',typeof(currentDate))
+
+
+    
+   const str1='Hello'
+   str1[0]='h'
+   console.log('str1',str1)
+
+   
+    
+</script>
+</html>

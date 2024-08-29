@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Loops in JS</h3>
+    <h2>While Loop</h2>
+    <p>
+        In JavaScript, a while loop is a control flow statement that allows you to repeatedly execute a block of code as long as a specified condition is true. </p>
+    
+    <h2>Do while loop</h2>
+    <p>In JavaScript, a do-while loop is a control flow statement that repeatedly executes a block of code as long as a specified condition evaluates to true.</p>
+    <h3>For loop</h3>
+    <p>For loop runs through the block of code a predetermined number of times.And it works well when you know exactly how many iterations you need.</p>
+    <p>types of for Loop:<br>
+    1.for/in - loops through the properties of an object <br>
+    2.for/of - loops through the values of an array,and string
+    </p>
+</body>
+<script>
+    //1.while loop
+        /*let i=11;
+        while(i<10){
+            console.log('Number'+i)
+            i++
+            }*/
+      
+    //2. 
+      /*let j=0
+      while(true){
+        console.log('Number'+j)
+        j++
+        if(j==10){
+        break
+      }
+    }*/
+    console.log('==================')
+//Do while loop
+    /*let k=1;
+        do
+        {
+            console.log('Number'+k)
+            k++
+            }while(k<10)
+            */
+   //2.It prints the false condition one time and stops the loop 
+    /*let l=11;
+        do
+        {
+            console.log('Number'+l)
+            l++
+            }while(l<10)*/
+    
+//for loop
+    for(let i=0;i<=5;i++){
+        console.log('Printing number',i)
+    }
+    for(let j=5;j>=0;j--){
+        console.log('Decrement numbers',j)
+    }
+    for(let x=0;x<=10;x+=2){
+        console.log('Even numbers are',x)
+    }
+    for(let y=0;y<=30;y+=5){
+        console.log('Skiping 5',y)
+    }
+//multiplication table with for loop
+    let number=2;
+    for(let k=1;k<=10;k++){
+        let result=number*k
+        //console.log('result is',result)
+        console.log(number +'x'+k+'='+result)
+    }
+//for-in loop
+    let person={
+        name:'John',
+        age:23,
+        address:'Telengana'
+    }
+    for(let key in person){
+        //console.log('key',key)
+        //console.log('value',person[key])
+        console.log(key+':'+person[key])
+    }
+    let car={
+        name:'toyota',
+        model:2024,
+        color:'red'
+    }
+    for(let info in car){
+        console.log(info +':'+car[info])
+    }
+//for-of loop
+    let str='John Doe'
+    for(let name of str){
+        console.log('Name is',name)
+    }
+
+    let arr=[1,2,3,4,5]
+    for(let num of arr){
+        console.log('numbers are',num)
+    }
+
+    let colors=['red','green','blue']
+    for(let color of colors){
+        console.log('Colors are',color)
+    }
+
+//Nested loop
+    for(let a=0;a<=3;a++){
+        console.log('Outer loop'+a)
+        for(let b=0;b<=2;b++){
+            console.log('Inner loop'+b)
+        }
+    }
+
+</script>
+</html>

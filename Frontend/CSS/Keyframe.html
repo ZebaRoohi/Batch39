@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1{
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        animation: move 2s ease infinite;
+    }
+    @keyframes move{
+        0%{
+            transform: translateX(0);
+        }
+        50%{
+            transform: translateX(700px);
+        }
+        100%{
+            transform:translateX(0);
+        }
+    }
+    .box2{
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        animation: opacity 2s ease infinite;
+    }
+    @keyframes opacity{
+        0%{
+            opacity: 0;
+        }
+        25%{
+            opacity: 0.3;
+        }
+        75%{
+            opacity: 0.8;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    .box3{
+        border: 1px solid red;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        animation: scale 2s ease infinite;
+    }
+    @keyframes scale{
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.5);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+</style>
+<body>
+    <h3>Key Frames</h3>
+    <div class="box1">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    </div>
+    <div class="box2">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    </div>
+    <div class="box3">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+    </div>
+</body>
+</html>

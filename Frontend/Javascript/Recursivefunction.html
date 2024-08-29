@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>A recursive function is a function that calls itself during its execution. Recursive functions are commonly used in programming when a problem can be broken down into smaller, identical sub-problems. Each recursive call processes a smaller instance of the problem until a base case is reached, at which point the function stops calling itself and returns a result.</p>
+</body>
+<script>
+    //recursive
+    function recursive(action){
+            console.log(`function calling itself ${action}`)
+            recursive(action)
+        }
+        recursive('coding')
+
+</script>
+</html>

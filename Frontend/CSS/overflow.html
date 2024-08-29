@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        margin-bottom: 50px;
+    }
+    .visible-box{
+        /*this is a default behavior */
+        overflow: visible;
+    }
+    .hidden-box{
+        height: 65px;
+        overflow: hidden;
+    }
+ .scroll-box{
+    overflow: scroll;
+ }
+ .auto-box{
+    overflow: auto;
+ }
+ .overflow-x{
+    overflow-x: auto;
+ }
+ .overflow-y{
+    overflow-y: auto;
+    height: 65px;
+ }
+</style>
+<body>
+    <h3>Example of css overflow properties</h3>
+    <div class="container visible-box">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad rem tenetur aliquam magnam, debitis ipsam dolorem ex unde nesciunt sunt!
+    </div>
+    <div class="container hidden-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, eligendi. Consequatur impedit numquam nisi optio fugiat quas sapiente atque doloribus.
+    </div>
+    <div class="container scroll-box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et rem natus quisquam sint quod quidem vitae illo repellendus assumenda nesciunt.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et rem natus quisquam sint quod quidem vitae illo repellendus assumenda nesciunt.
+    </div>
+    <div class="container auto-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit blanditiis alias minima optio ut odio magni sunt similique inventore quas!.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit blanditiis alias minima optio ut odio magni sunt similique inventore quas!.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit blanditiis alias minima optio ut odio magni sunt similique inventore quas!.
+    </div>
+    <div class="container overflow-x">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit possimus nihil consequatur excepturi veritatis officia cum deserunt quam iste rem?
+    </div>
+    <div class="container overflow-y">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit nulla nemo officia omnis alias earum architecto illo labore, voluptates neque!
+    </div>
+</body>
+</html>

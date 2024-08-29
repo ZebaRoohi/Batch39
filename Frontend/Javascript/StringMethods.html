@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Example of String methods</h3>
+</body>
+<script>
+//string representation
+    let singleQuotesString = 'Hello, World!';
+    let doubleQuotesString = "Hello, World!";
+    let backticksString = `Hello, World!`
+    console.log(singleQuotesString,doubleQuotesString,backticksString)
+
+//String Methods
+//concat:You can concatenate strings using the + operator or the concat method.
+    let str1="Hello"
+    let str2="World"
+    let result=str1+','+str2
+    console.log("result:",result)
+    let resultConcate=str1.concat(',',str2)
+    console.log("result2",resultConcate)
+
+//length:The length property gives the length of the string.
+    let str_len="Hello world"
+    console.log("Length:",str_len.length)
+
+//Accessing characters:Individual characters can be accessed using square brackets and zero-based indexing
+    let char="Hello World"
+    console.log("Accessing L:",char[2])
+    console.log("Accessing W:",char[6])
+    console.log("Accessing D:",char[10])
+    //charAt
+    console.log("Accesing H:",char.charAt(0))
+    console.log("Accessing space:",char.charAt(5))
+</script>
+</html>
