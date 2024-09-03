@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Array from User Input</title>
+</head>
+<body>
+    <script>
+  // Example array with duplicate elements works both with number and string
+let myArray = [1, 2, 3, 4, 4, 5, 6, 6, 7];
+// Removing duplicates using filter and indexOf
+let uniqueArray = myArray.filter((item, index) => {
+    return myArray.indexOf(item) === index;
+});
+
+console.log(uniqueArray); // Output: [1, 2, 3, 4, 5, 6, 7]
+
+    </script>
+</body>
+</html>

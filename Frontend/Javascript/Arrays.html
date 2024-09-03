@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Example of Array methods</h3>
+</body>
+<script>
+//creating array :array litral method
+    const fruits=['apple','banana','orange']
+    console.log(fruits)
+//creating array with constructor methods
+    const numbers=new Array(1,2,3,4,5)
+    console.log(numbers)
+//accessing elements of array
+    console.log(fruits[0])
+    console.log(numbers[2])
+//array length
+    console.log(fruits.length)
+    console.log(numbers.length)
+//add methods
+    //push add at the end
+    fruits.push('kiwi')
+    console.log(fruits)
+    
+    //unshift add at the begining
+    fruits.unshift('melon')
+    console.log(fruits)
+    fruits.unshift('pear','pineapple')
+    console.log(fruits)
+
+    //pop remove last items
+    fruits.pop()
+    console.log(fruits)
+
+    //shift removes first items
+    fruits.shift()
+    console.log(fruits)
+
+    //slice:Returns a shallow copy of a portion of an array.
+    console.log("slice",fruits.slice(0,2))
+    console.log("slice with specific index",fruits.slice(3))
+    console.log("negative indexing",fruits.slice(-3))
+    console.log(fruits.slice(1,-2))
+
+    //splice: Changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+    //add
+    const months = ['Jan', 'March', 'April', 'June','Aug','Sep'];
+    months.splice(3,0,'May')
+    console.log(months)
+    months.splice(1,0,'Feb')
+    console.log(months)
+
+    //update
+    months.splice(6,1,'July')
+    console.log(months)
+
+    months.splice(7,2,'Aug','Sep')
+    console.log(months)
+
+    //delete
+    const days=['Sun','Mon','Tues','Wed','Thu','Fri']
+    days.splice(3,2)
+    console.log(days)
+
+    //concat
+    let arr1=[1,2,3]
+    let arr2=[4,5,6]
+    let arr=arr1.concat(arr2)
+    console.log('array concate',arr)
+    console.log('arr1',arr1,typeof(arr1))
+    let result_arr=arr1.toString()
+    console.log(result_arr,typeof(result_arr))
+
+    //sort:The sort() method sorts an array alphabetically.
+    let str=['Sun','Mon','Tues','Wed','Thu','Fri']
+    console.log('sort str',str.sort())
+
+    let num=[100,7,56,45,0,11]
+    console.log('sort',num.sort())
+
+    let sort_asc=num.sort((a,b)=>a-b)
+    console.log('sort asc',sort_asc)
+
+    //desc
+    let sort_des=num.sort((a,b)=>b-a)
+    console.log('desc',sort_des)
+
+//The reverse() method reverses the elements in an array.
+    let num1=[1,2,3,7,10,0]
+    console.log('reverse',num1.reverse())
+
+    let letters=['a','b','c']
+    console.log(letters.reverse())
+</script>
+</html>
