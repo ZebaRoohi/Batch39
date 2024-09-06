@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ //Write a JavaScript function program that takes an array of strings as input and returns a new array with strings sorted in alphabetical order.
+    /*function sortArray(arr){
+        return arr.sort()
+    }
+    console.log(sortArray(['z','f','x','g','a']))*/
+
+
+//Write a JavaScript program that accepts a string as input and returns the same string with the first letter capitalized.
+   /* function capitalLetter(str){
+        return str.charAt(0).toUpperCase()+str.slice(1)
+    }
+    console.log(capitalLetter('hello'))*/
+
+//Write a JavaScript program that prompts the user to enter two strings and checks if they are anagrams of each other.
+   /* function angram(str1,str2){
+        const str1_sort=str1.toLowerCase().split('').sort().join('')
+        const str2_sort=str2.toLowerCase().split('').sort().join('')
+        return str1_sort===str2_sort
+    }
+    console.log(angram('Silient','listen'))*/
+
+//Write a JavaScript program to reverse a given string.  
+    /*function reverseStr(str){
+        return str.split('').reverse().join('')
+    }
+    console.log(reverseStr('hello world'))*/
+
+//Write a JavaScript function to check whether a string is blank or not.
+    function string_blank(input){
+        if(input.length==0){
+            return false
+        }else {
+            return true
+        }
+    }
+    console.log(string_blank(''))
+    console.log(string_blank('testing','hello'))
+
+//Filtering and Mapping Odd Numbers and double the element.
+    /*let numbers=[1,2,3,4,5,6,7,8]
+    let result=numbers.filter(num=>num%2!=0)
+                .map(square=>square*2)
+    console.log(result)*/
+
+//.Filtering and Mapping Products with a Certain Price and name
+    const products=[{id:101,name:'Laptop',price:1000},{id:102,name:'Tablet',price:800},{id:103,name:'Mobile',price:500}]
+
+    const result_products=products.filter(product=>product.price
+        <700)
+        .map(Pname=>({name:Pname.name,price:Pname.price}))
+    console.log(result_products)
+    
+</script>
+</html>
