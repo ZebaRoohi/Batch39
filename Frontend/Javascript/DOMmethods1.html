@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .heading{
+        color:red;
+        font-size: 28px;
+        font-weight: 200;
+    }
+</style>
+<body>
+<h3>Dom methods</h3>
+<!--document.getElementById method-->
+    <p id="demo">Hello world</p>
+    <p id="demo1">Testing paragraph</p>
+    <button onclick="changeText()">Click me</button>
+
+    <div id="myDiv">Color change</div>
+    <button onclick="changeColor()">click me</button>
+    <br>
+    <br>
+
+    <img id="myImage" src="https://media.gettyimages.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=gi&k=20&c=d4xX_TpNzlOAoqot5Y9Cv17tfLge5xYqctFes9Zfs5Q=">
+    <button onclick="changeImage()">change image</button>
+
+  <!--difference between innerHtml,innerText and text content-->  
+    <div id="example">
+        <p>This is the paragraph tag</p>
+        <p style="display: none;">This is another paragraph tag</p>
+    </div>
+    
+<!--className-->
+    <p class="demo">Paragrap1</p>
+    <p class="demo">Paragraph2</p>
+    <p class="demo">Paragraph3</p>
+    <button onclick="changeParagraph()">Change paragraph</button>
+
+    <div class="myDiv1" style="width: 100px; height: 100px; background-color: aqua;"></div>
+    <div class="myDiv1" style="width: 100px; height: 100px; background-color:yellow;"></div>
+    <div class="myDiv1" style="width: 100px; height: 100px; background-color: green;"></div>
+    <button onclick="changeDiv()">Change color</button>
+    <br><br><br>
+    
+    <img class="myImage1" src="https://media.gettyimages.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=gi&k=20&c=d4xX_TpNzlOAoqot5Y9Cv17tfLge5xYqctFes9Zfs5Q=">
+       
+    <img class="myImage1" src="https://media.gettyimages.com/id/472317739/vector/flag-of-india.jpg?s=612x612&w=gi&k=20&c=d4xX_TpNzlOAoqot5Y9Cv17tfLge5xYqctFes9Zfs5Q=">
+    <button onclick="imageChange()">change image</button>
+
+    <ul class="list">
+        <li class="child">coffe</li>
+        <li class="child">tea</li>
+    </ul>
+<!--tagname-->
+    <p>para1</p>
+    <p>para2</p>
+    <h1>heading1</h1>
+    <h3>heading3</h3>
+    <h3>heading3</h3>
+    <h3>heading3</h3>
+</body>
+<script>
+    // const element=document.getElementById('demo')
+    // element.innerHTML='Good morning'
+
+    document.getElementById('demo').innerHTML='Good morning'
+
+//basic syntax
+    function changeText(){
+        document.getElementById('demo1').innerHTML='Good morning'
+    }
+  //with css properties  
+    function changeColor(){
+        const element=document.getElementById('myDiv')
+        element.style.fontSize="36px"
+        element.style.backgroundColor="yellow"
+        element.style.color="red"
+    }
+//wit attribute
+    function changeImage(){
+        const element=document.getElementById('myImage')
+        element.setAttribute('src','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnvepwi5LErWN9Slstzgl20Y0S7Ie9zC5yvD9iWmGJiVohtN97k1aAfpbR2CAz2VHAdOU&usqp=CAU')
+    }
+//difference between innerHtml,innerText and text content
+        const element=document.getElementById('example')
+        console.log('innerHtml:',element.innerHTML)
+        console.log('innerText:',element.innerText)
+        console.log('textContent:',element.textContent)
+
+ //className
+        function changeParagraph(){
+            const elements=document.getElementsByClassName('demo')
+            for(const ele of elements){
+            ele.innerHTML="Change paragraph1" 
+            ele.style.color="green"
+            }
+        }   
+        function changeDiv(){
+            const elements=document.getElementsByClassName('myDiv1')
+            for(const ele of elements){
+                ele.style.backgroundColor="red";
+            }
+        }
+
+        function imageChange(){
+            const elements=document.getElementsByClassName('myImage1')
+            for(const ele of elements){
+                ele.setAttribute('src','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnvepwi5LErWN9Slstzgl20Y0S7Ie9zC5yvD9iWmGJiVohtN97k1aAfpbR2CAz2VHAdOU&usqp=CAU')
+            }
+        }
+
+        const elements=document.getElementsByClassName('list')[0]
+        elements.getElementsByClassName('child')[1].innerHTML="milk"
+
+//tagname
+        const eles=document.getElementsByTagName('p')
+        // for(let i=0;i<eles.length;i++){
+        //     eles[i].innerHTML="change para"
+        // }
+        for(const ele of eles){
+            ele.innerHTML="change para"
+        }
+
+        const headings=document.getElementsByTagName('h3')
+        for(const heading of headings){
+            heading.classList.add('heading')
+        }
+
+</script>
+</html>

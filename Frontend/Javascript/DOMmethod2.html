@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .demo{
+        font-size: 16px;
+        color: red;
+        font-weight: 500;
+    }
+    #myParagraph{
+        background-color: red;
+    }
+</style>
+<body>
+  <!--queryselector-->  
+    <h1 id="main">heaing1</h1>
+    <p class="para">para1</p>
+    <p class="para">para2</p>
+    <a href="#">link </a>
+
+  <!--query selector all-->
+    <div class="box">Box1</div>  
+    <div class="box">Box2</div>  
+    <div class="box">Box3</div>  
+
+    <ul id="fruit_list">
+        <li>apple</li>
+        <li>mango</li>
+        <li>orange</li>
+    </ul>
+
+    <p class="demo">Para1</p>
+    <h1 class="demo">Heading1</h1>
+    <h6 class="demo">Heading6</h6>
+    
+    <p id="example">Example of paragraph</p>
+    <button id="myButton" onclick="buttonClick()">Click me</button>
+
+    <p id="myParagraph">Paragraph</p>
+    <button onclick="toggleClick()">Toggle</button>
+</body>
+<script>
+    const heading=document.querySelector('#main')
+    console.log(heading.textContent)
+
+    const p=document.querySelector('.para')
+    console.log(p.textContent)
+
+    const a=document.querySelector('a')
+    console.log(a.textContent)
+
+//queryselector all
+    const boxes=document.querySelectorAll('.box')
+    boxes.forEach(box=>console.log(box.textContent))
+
+    const items=document.querySelectorAll('#fruit_list')
+    items.forEach(item=>console.log(item.textContent))
+
+    const demos=document.querySelectorAll('.demo')
+    demos.forEach(demo=>console.log(demo.textContent))
+
+//class task
+//1.Write JavaScript code to change the text content of an HTML element with the id "example" to "Hello, DOM!
+    const element=document.getElementById('example')
+    element.textContent="Hello Dom"
+
+//2.Write JavaScript code of clicking a button with the id "myButton" and log the message "Button clicked!" to the console.
+    function buttonClick(){
+        console.log("button clicked")
+    }
+//3.Toggle the background color of a paragraph with the id "myParagraph" between red and blue 
+      function toggleClick(){
+        const para=document.getElementById('myParagraph')
+        para.style.backgroundColor= (para.style.backgroundColor=="red")     ?"blue"  :"red"
+      }
+</script>
+</html>
