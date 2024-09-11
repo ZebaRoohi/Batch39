@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const element=document.createElement('div')
+    console.log(element)
+
+    element.className="demo"
+    element.id="example"
+    element.style.backgroundColor="green"
+    element.style.padding="12px"
+    const addText=element.append('Hello world')
+    document.body.append(element)
+
+    const para=document.createElement('p')
+    para.append('new para')
+    console.log(para)
+    document.body.append(para)
+    para.style.color="red"
+    para.style.fontSize="28px"
+    
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Example 1 -->
+    <!-- <div id="parentElement">
+        <p>First</p>
+        <span>Second</span>
+        <em>Third</em>
+    </div> -->
+
+<!--Example2-->
+    <div id="parent">
+        <!-- comment -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    //node traversing
+    /*const element=document.getElementById('parentElement')
+    console.log('Element',element)
+    
+    const parent=element.parentNode
+    console.log('parent',parent)
+
+    const child=element.childNodes
+    console.log('child',child)
+
+    const first_child=element.firstChild
+    console.log('firstChild',first_child)
+
+    const last_child=element.lastChild
+    console.log('lastChild',last_child)
+
+    const next_sibling=element.nextSibling
+    console.log('nextSibling',next_sibling)
+
+    const pre_sibling=element.previousSibling
+    console.log('prevSibling',pre_sibling)*/
+
+
+   const parentEle=document.getElementById('parent')
+   console.log(parentEle)
+   console.log(parentEle.children)
+   console.log(parentEle.childNodes)
+   console.log(parentEle.children[1])
+   console.log(parentEle.firstElementChild)
+   console.log(parentEle.lastElementChild)
+   console.log(parentEle.children[1].innerHTML)
+//    for(let i=0;i<parentEle.children.length;i++){
+//     console.log(parentEle.children[i].innerHTML)
+//    }
+    const first=parentEle.children[1]
+    first.style.color='red'
+
+</script>
+</html>
