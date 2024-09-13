@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>AddEventListeners</h3>
+    <p>In JavaScript, the addEventListener method is used to attach an event handler to a specified element. An event handler is a function that will be executed when a specific event occurs on the element, such as a click, mouseover, or keypress.</p>
+    <h4>1.Mouse Event</h4>
+    <button id="myBtn">Click</button>
+    <div id="mouseOver" style="width: 100px; height: 100px; background-color: cyan;"></div>
+
+    <div id="mouseOut" style="width: 100px; height: 100px; background-color: yellow;"></div>
+<hr>
+    <p>2.Keyboard event</p>
+    <input type="text" id="down" placeholder="enter a text...." />
+    <input type="text" id="up" placeholder="Enter a text..." />
+
+  <hr>
+    <p>3.Form events</p>  
+    <select id="myDropdown">
+        <option value="option1">Option1</option>
+        <option value="option2">Option2</option>
+        <option value="option3">Option3</option>
+    </select>
+
+    <form id="onSubmit">
+        <input type="text" placeholder="enter a name..." />
+        <button>Submit</button>
+    </form>
+</body>
+<script>
+//mouse events
+    document.getElementById('myBtn').addEventListener("click",function(){
+        console.log('You clicked the button')
+    })
+
+    document.getElementById('mouseOver').addEventListener('mouseover',()=>{
+        document.getElementById('mouseOver').style.backgroundColor="red"
+    })
+
+    document.getElementById('mouseOut').addEventListener('mouseout',()=>{
+        document.getElementById('mouseOut').style.backgroundColor="green"
+    })
+
+//keyboard events
+    document.getElementById('down').addEventListener('keydown',(event)=>{
+        console.log('You press a key(keydown):',event.key)
+    })
+    document.getElementById('up').addEventListener('keyup',(e)=>{
+        console.log('When key is released(keyup):',e.key)
+    })
+
+//form events
+    document.getElementById('myDropdown').addEventListener('change',(e)=>{
+        console.log('you have selected:',e.target.value)
+    })
+
+    document.getElementById('onSubmit').addEventListener('submit',()=>{
+        alert('form submitted')
+    })
+
+
+</script>
+</html>

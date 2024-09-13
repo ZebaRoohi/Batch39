@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="onLoad()">
+    <h3>Events:In JavaScript, events are actions or occurrences that happen in the system or within the DOM (Document Object Model). </h3>
+    <h4>Types of events</h4>
+    <p>1.MouseEvents</p>
+    <button onclick="onClick()">Click me</button>
+    <div id="myDiv" style="width: 100px; height: 100px; background-color: cyan;" onmouseover="onMouseOver()" onmouseout="onMouseOut()">Mouseover</div>
+    <div id="myDiv1" style="width: 100px; height: 100px; background-color: blue;"
+    onmousedown="onMouseDown()" onmouseup="onMouseUp()">Mouse upand down</div>
+   
+    <p id="demo" onmousemove="onMouseMove()">on mouse move</p>
+    <hr>
+    <p>2.Keyboard events</p>
+    <input type="text" id="up" onkeyup="onKeyUp(event)" />
+    <input type="text" onkeydown="onKeyDown(event)" />
+    <hr>
+    <p>3.Form events</p>
+    <input type="text" id="focus" onfocus="onFocus()"  placeholder="type something..."/>
+    <form onsubmit="onSubmit()">
+        <input type="text" placeholder="enter your name" />
+        <button>submit</button>
+    </form>
+  <br> <br>
+    <input type="text" id="blur" onblur="onBlur()" />
+    <select onchange="onChange()">
+        <option value="option1">Option1</option>
+        <option value="option2">Option2</option>
+    </select>
+</body>
+<script>
+//Mouse Events
+        function onClick(){
+            alert("You have clicked me")
+            console.log("You clicked me")
+        }
+        function onMouseOver(){
+            console.log("you hover on me")
+            document.getElementById('myDiv').innerHTML="change text"
+        }
+        function onMouseOut(){
+            console.log("You are outside of div")
+            document.getElementById('myDiv').innerHTML="Outside of div"
+        }
+        function onMouseDown(){
+            console.log("on mouse down")
+        }
+        function onMouseUp(){
+            console.log("on mouse up")
+        }
+        function onMouseMove(){
+            console.log("you moved on the text")
+            document.getElementById('demo').style.backgroundColor="green"
+        }
+        function onKeyUp(event){
+            console.log('you have pressed the key'+event.key)
+        }
+        function onKeyDown(event){
+            console.log('You have pressed a key',event.key)
+        }
+        function onFocus(){
+            document.getElementById('focus').style.backgroundColor="yellow"
+        }
+        function onSubmit(){
+            alert("form submitted successfully")
+        }
+        function onBlur(){
+            console.log('when focus is away from element')
+        }
+        function onChange(){
+            console.log("You selection changed")
+        }
+        function onLoad(){
+            alert("Page is loading")
+        }
+</script>
+</html>

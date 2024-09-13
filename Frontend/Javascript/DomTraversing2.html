@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p id="demo">This is a para to be removed</p>
 </body>
 <script>
     const element=document.createElement('div')
@@ -25,6 +25,22 @@
     document.body.append(para)
     para.style.color="red"
     para.style.fontSize="28px"
+
+    //remove the element
+    const remove_para=document.getElementById('demo')
+    remove_para.remove()
+
+//creating list tags
+    const ul=document.createElement('ul')
+    const items=['item1','item2','item3']
+    items.forEach(text=>{
+        const li=document.createElement('li')
+        li.textContent=text
+        ul.appendChild(li)
+
+    })
+    document.body.appendChild(ul)
+    ul.children[1].remove()
     
 </script>
 </html>
