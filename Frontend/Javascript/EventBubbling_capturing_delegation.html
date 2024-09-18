@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul{
+        list-style: none;
+    }
+    li{
+        padding: 10px;
+        margin: 10px;
+        background-color: gray;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h3>Example of Event bubling,capturing and delegations</h3>
+    <p>	In the event bubbling phase, the event starts from the target element that triggered the event and bubbles up through its ancestors in the DOM hierarchy.
+        Most modern browsers follow the event bubbling model by default.</p>
+    <div id="outer">
+        <p id="inner">This is a paragraph</p>
+    </div>
+
+    <hr>
+    <p>	In the event capturing phase, the event starts from the top-level ancestor and trickles down to the target element that triggered the event.
+        You can enable event capturing by setting the third parameter of addEventListener to true.
+    </p>
+    <div id="outer1">
+        <p id="inner1">Click me</p>
+    </div>
+    <hr>
+    <p>Event delegation is a technique in JavaScript where a single event listener is placed on a common ancestor (usually a parent) of multiple elements, and it leverages event bubbling to handle events for all the child elements.</p>
+    <ul id="parentEle">
+        <li>List1</li>
+        <li>List2</li>
+        <li>List3</li>
+        <li>List4</li>
+        <li>List5</li>
+    </ul>
+</body>
+<script>
+//bubbling
+    document.getElementById('outer').addEventListener('click',()=>{
+        alert('This is an outer function')
+    })
+    document.getElementById('inner').addEventListener('click',()=>{
+        alert('This is an inner function')
+    })
+//capturing
+    document.getElementById('outer1').addEventListener('click',()=>{
+        alert('Outer function capturing')
+    },true)
+
+    document.getElementById('inner1').addEventListener('click',()=>{
+        alert('Inner function capturing')
+    },true)
+//delegation
+    document.getElementById('parentEle').addEventListener('click',(event)=>{
+            if(event.target.tagName==='LI'){
+                alert('You clicked on:'+event.target.textContent)
+            }
+    })
+</script>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Page</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.faq-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.faq-question:hover {
+  background-color: #0056b3;
+}
+
+</style>
+<body>
+
+  <div class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleAnswer(0)">
+        What is BMI?
+      </button>
+      <div class="faq-answer" id="answer-0">
+        BMI stands for Body Mass Index. It is a measurement of body fat based on height and weight.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleAnswer(1)">
+        How is BMI calculated?
+      </button>
+      <div class="faq-answer" id="answer-1">
+        BMI is calculated using the formula: BMI = weight (kg) / (height (m))^2.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleAnswer(2)">
+        What is a healthy BMI range?
+      </button>
+      <div class="faq-answer" id="answer-2">
+        A BMI between 18.5 and 24.9 is considered healthy for most adults.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleAnswer(3)">
+        What happens if my BMI is too high or too low?
+      </button>
+      <div class="faq-answer" id="answer-3">
+        A high BMI may indicate obesity, which increases the risk of health problems, while a low BMI may suggest undernutrition.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleAnswer(index) {
+  const answer = document.getElementById(`answer-${index}`);
+  if (answer.style.display === "block") {
+    answer.style.display = "none";
+  } else {
+    answer.style.display = "block";
+  }
+}
+
+  </script>
+</body>
+</html>
