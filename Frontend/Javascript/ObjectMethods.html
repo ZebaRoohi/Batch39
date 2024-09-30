@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Object methods</h3>
+    <p id="demo"></p>
+</body>
+<script>
+    let person={
+        name:'John',
+        age:24,
+        address:'Telengana'    
+        }
+
+    document.getElementById('demo').innerHTML=JSON.stringify(person)
+    document.getElementById('demo').innerHTML=JSON.stringify(person.address)
+    console.log(person.address)
+    document.getElementById('demo').innerHTML=Object.values(person)
+    document.getElementById('demo').innerHTML=Object.keys(person)
+//add any item
+    person.country="india"
+    document.getElementById('demo').innerHTML=JSON.stringify(person)
+
+//delete
+    delete person.address
+    document.getElementById('demo').innerHTML=JSON.stringify(person)
+
+//accessor properties
+//get method
+    let student={
+        firstName:'Harry',
+        grade:12,
+        get getName(){
+          return `${this.firstName}`
+        }
+    }
+    console.log(student.firstName)
+
+//set method
+    let student1={
+        firstName:"Sam",
+        grade:11,
+        set setName(updateName){
+         this.firstName=updateName
+        }
+    }
+    console.log(student1)
+    student1.setName="John"
+    console.log(student1)
+
+//object prototype
+    function Person(name,age,address){
+        this.name=name;
+        this.age=age;
+        this.address=address
+    }
+    //console.log(Person.prototype)
+    Person.prototype.start=function(){
+        console.log(`${this.name} ${this.age} ${this.address}`)
+    }
+    let obj=new Person('John',23,'Telengana')
+    obj.start()
+
+//hasOwnproperty
+    let course={
+        name:'fsd',
+        othercourse:'ds'
+    }
+    console.log(course.hasOwnProperty('name'))
+    console.log(course.hasOwnProperty('othercourse'))
+
+//freeze
+    let numbers=[1,2,3,4]
+    Object.freeze(numbers)
+    console.log(numbers)
+    // numbers.push(6)
+    // console.log(numbers)
+    numbers[0]=0
+    console.log(numbers)
+
+//setPrototype
+    let fruits={
+        name:'apple',
+        color:'red'
+    }
+    let veg={
+        vegname:'tomato',
+        vegcolor:'red'
+    }
+    Object.setPrototypeOf(veg,fruits)
+    console.log(veg.name)
+</script>
+</html>

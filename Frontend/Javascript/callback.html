@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Callbacks</h3>
+   <p>In JavaScript, a callback is a function passed as an argument to another function. The purpose of a callback is to be executed later, after the completion of an asynchronous operation or a certain task.</p>
+   <p>Callback hell, also known as the "Pyramid of Doom," occurs when you have multiple nested callbacks, making the code hard to read and maintain. This often happens in asynchronous JavaScript, especially when dealing with nested callbacks for I/O operations.</p>
+</body>
+<script>
+    //callback
+      /* function greet(cb){
+            console.log('Hello from first fucntion')
+            cb()
+        }
+        function sayHi(){
+            console.log('Hi from another function')
+        }
+        greet(sayHi)
+
+    //with argument
+        function greeting(name,cb){
+            console.log(`Hello ${name} from first function`)
+            cb()
+        }
+        function sayHello(){
+            console.log('Hello from second function')
+        }
+        greeting('John',sayHello)
+
+    //callback with setTimeout
+        function name(cb){
+            setTimeout(()=>{
+                console.log('example with settime out')
+                cb()
+            },2000)
+        }
+        function example(){
+            console.log('Good morning')
+        }
+        name(example)*/
+
+
+//callback hell
+        function callbackHell(callback){
+            setTimeout(()=>{
+                let i=1;
+                callback(i)
+                i++;
+                setTimeout(()=>{
+                    callback(i);
+                    i++
+                    setTimeout(()=>{
+                        callback(i);
+                        i++;
+                        setTimeout(()=>{
+                            callback(i);
+                            i++
+                        },4000)
+                    },3000)
+                },2000)
+            },1000)
+        }
+        function print(i){
+          alert('value of i is'+i)
+        }
+
+        callbackHell(print)
+</script>
+</html>

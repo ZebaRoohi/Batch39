@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>SetTime out and SetTimeInterval</h3>
+    <p>Asynchronous operation:It will execute the code in non sequential order</p>
+    <p>Synchronous operation:It will execute the code in a sequential order</p>
+    <h4>Javascript is a Synchronous single threaded programming language</h4>
+    <p>setTimeout():setTimeout executes a function or evaluates an expression after a specified delay (in milliseconds).</p>
+    <p>setInterval executes a function or evaluates an expression repeatedly at a specified interval (in milliseconds).</p>
+</body>
+<script>
+    //setTimeout
+   /* console.log('start')
+    setTimeout(function(){
+        console.log('settime out example')
+    },2000)
+    console.log('stop')
+
+    setTimeout(()=>{
+        console.log('delay after 3 seconds')
+    },3000)
+//with parameters
+    setTimeout((name)=>{
+        console.log(`Hello ${name} this message will delay after 4 seconds`)
+    },4000,'John')*/
+
+//setInterval
+    let intervalId=setInterval(()=>{
+        console.log('setInterval example')
+    },1000)
+
+    let counter=0;
+    let interval=setInterval(()=>{
+        console.log('Counter',counter++)
+
+        if(counter===5){
+            clearInterval(interval)
+        }
+    },1000)
+
+    let intervalEx=setInterval((name)=>{
+        console.log(`Hello ${name} this message will repeat every second`)
+    },5000,'Bob')
+</script>
+</html>

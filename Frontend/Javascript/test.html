@@ -1,48 +1,28 @@
-<html>
- <head>
- </head>
- <body>
-  <h3>Click on the tabs below:</h3>
-  <div class="tab">
-    <button class="tablinks" onclick="clickHandle(event, 'Cat')">Cat</button>
-    <button class="tablinks" onclick="clickHandle(event, 'Bear')">Bear</button>
-    <button class="tablinks" onclick="clickHandle(event, 'Dog')">Dog</button>
-  </div>
-
-  <div id="Cat" class="tabcontent">
-    <h3>Meowww.</h3>
-  </div>
-
-  <div id="Bear" class="tabcontent">
-    <h3>Rawrrr.</h3>
-  </div>
-
-  <div id="Dog" class="tabcontent">
-    <h3>Bork Bork.</h3>
-</div>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="notifications"></p>
 <script>
-
-function clickHandle(evt, animalName) {
-  let i, tabcontent, tablinks;
-
-  // This is to clear the previous clicked content.
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Set the tab to be "active".
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Display the clicked tab and set it to active.
-  document.getElementById(animalName).style.display = "block";
-  evt.currentTarget.className += " active";
+function createNotification(message) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    document.getElementById('notifications').appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 5000); 
 }
+
+createNotification('This is a notification message.');
+setTimeout(() => {
+    createNotification('Another notification will appear after 2 seconds.');
+}, 2000);
+
 </script>
 
- </body>
+</body>
 </html>

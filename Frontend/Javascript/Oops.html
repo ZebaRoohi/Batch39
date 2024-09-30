@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Oops </h3>
+    <p>Object-oriented programming (OOP) is a programming paradigm that uses objects, which can contain data in the form of fields (often known as properties or attributes) and code in the form of procedures (often known as methods). JavaScript is a versatile language that supports OOP principles through its prototype-based inheritance system.
+    </p>
+    <p>A class in JavaScript is a blueprint for creating objects. It defines a set of properties and methods that objects created from the class will have.</p>
+    <p id="demo"></p>
+    <p>Objects in JavaScript are complex data types that can store data and have associated behavior through properties and methods.</p>
+    <p>Inheritance is a mechanism that allows a class (subclass/derived class) to inherit properties and methods from another class (superclass/base class). It promotes code reuse and establishes an "is-a" relationship between classes</p>
+    <p>Polymorphism allows objects of different classes to be treated as objects of a common base class. </p>
+</body>
+<script>
+//basic example of class
+   /* class Javascript{
+        method1(){
+            console.log('Example of method1')
+        }
+        method2(){
+            console.log('Example of method2')
+        }
+    }
+    //new is the instance of class(means:holding multiple objects)
+    let method_ex=new Javascript()
+    method_ex.method1()
+    method_ex.method2()
+
+//class with constructors
+    class Vehicle{
+        constructor(name){
+            //obj instance
+            this.name=name
+        }
+        display(){
+            console.log(`${this.name} is driving`)
+        }
+    }
+    let car=new Vehicle('John')
+    car.display()
+
+    class Employee{
+        constructor(id,name,salary){
+            this.id=id
+            this.name=name
+            this.salary=salary
+        }
+        display(){
+            console.log(`id is ${this.id} and the name is ${this.name} and the salary is ${this.salary}`)
+        }
+    }
+    let emp=new Employee(101,'Harry',10000)
+    emp.display()
+//updating salary
+    class Emp{
+        constructor(id,name,salary){
+            this.id=id
+            this.name=name
+            this.salary=salary
+        }
+        display(){
+            console.log(`id is ${this.id} and the name is ${this.name} and the salary is ${this.salary}`)
+        }
+        updateSalary(newSalary){
+            this.salary=newSalary
+        }
+    }
+    let emp1=new Emp(102,'Sam',15000)
+    emp1.display()
+    emp1.updateSalary(20000)
+    emp1.display()
+
+//area of rectangle
+    class Rectangle{
+        constructor(width,height){
+            this.width=width
+            this.height=height
+        }
+        area(){
+            //return this.width*this.height
+            console.log(`area is ${this.width*this.height}`)
+        }
+    }
+    let rect=new Rectangle(5,10)
+   // console.log(rect.area())
+   rect.area()*/
+
+
+//2.Object
+    /*const person={
+        name:'John',
+        age:22,
+        address:'Telengana',
+        country:{
+            city:'hyd',
+            pin:234454
+        },
+        greet:function(){
+            console.log(`hello ${this.name} and ${this.age}`)
+        }
+    }
+    console.log(person)
+    console.log(person.age)
+    console.log(person.country.city)//dotnotation
+    console.log(person["address"]) //bracket notation
+    console.log(person["country"])
+    document.getElementById('demo').innerHTML=JSON.stringify(person)
+    person.greet()*/
+
+//3.Inheritance
+   class Vehicle{
+        constructor(type,brand){
+            this.type=type
+            this.brand=brand
+        }
+        start(){
+            console.log(`Type is ${this.type} and Brand is ${this.brand}`)
+        }
+    }
+    class Car extends Vehicle{
+        constructor(brand,model){
+            //super inheritts parent class properties
+            super('car',brand)
+                this.model=model
+            
+        }
+        display(){
+            console.log(`brand is ${this.brand} and model is ${this.model}`)
+        }
+    }
+    let obj=new Car('ABC','BMW')
+    obj.start()
+    obj.display()
+
+//4.polymorphism
+    /*class Vehicle{
+        move(){
+            console.log('veicle is moving')
+        }
+    }
+    class Car extends Vehicle{
+        move(){
+            console.log('Car is moving')
+        }
+    }
+    class Airplane extends Vehicle{
+        move(){
+            console.log('Airplane is moving')
+        }
+    }
+    let obj1=new Car()
+    let obj2=new Airplane()
+    obj1.move()
+    obj2.move()*/
+</script>
+</html>

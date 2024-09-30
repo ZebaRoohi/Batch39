@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Try catch and finally block</h3>
+    <button onclick="myFunc()">Click</button>
+</body>
+<script>
+    function myFunc(){
+        let a=10
+        let b=5
+        try{
+            if(b==0){
+                throw("Demonitor cannot be zero")
+            }else{
+                let c=a/b;
+                console.log('result is',c)
+            }
+        }catch(err){
+            console.log('Zero division error:',err)
+        }
+    }
+</script>
+</html>

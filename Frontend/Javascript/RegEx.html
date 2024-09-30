@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Example of Regular expression</h3>
+    <p>1.pattern matching</p>
+</body>
+<script>
+//pattern 
+    //case insensitive
+    let text="Hello every,hi there"
+    let pattern=/hi/i; 
+    let result=text.match(pattern)
+    console.log(result)
+   
+   //global search
+   let text1="Hello everyone,hi there"
+   let pattern1=/Hi/gi
+   let result_g=text1.match(pattern1)
+   console.log(result_g)
+
+   //modifiers(^ start and $ end)
+    let text2=`Javascript 
+is a powerful
+programming
+language`
+
+    let pattern2=/^is/m
+    //let pattern2=/language$/m;
+    let result2=text2.match(pattern2);
+    console.log(result2);
+
+//Bracket expressions
+    //1.[abc]
+    let str="abc123 df67 y 9yz"
+    let str_pattern=/[abc]/g
+    console.log(str.match(str_pattern))
+
+    let str_pattern2=/[^abc]/g
+    console.log(str.match(str_pattern2))
+
+    let str_pattern3=/[0-9]/g
+    console.log(str.match(str_pattern3))
+
+    let str_pattern4=/[^0-9]/g
+    console.log(str.match(str_pattern4))
+
+    let str_pattern5=/[x|y]/g
+    console.log(str.match(str_pattern5))
+
+//Digit search
+    let str1="Hello123 world567890 897"
+    let str1_pattern=/\d/g
+    console.log(str1.match(str1_pattern))
+
+//word search
+    let word="Javascript is a powerful programming language"
+    let word_pattern=/\w/g
+    console.log(word.match(word_pattern))
+
+//space search
+    let space_pattern=/\s/g
+    console.log(word.match(space_pattern))
+
+//Object methods
+    let str_exec="javascript is a powerful programming language"
+    let exec_pattern=/is/.exec(str_exec)
+    console.log(exec_pattern)
+
+    let test_pattern=/is/.test(str_exec)
+    console.log(test_pattern)
+   
+</script>
+</html>

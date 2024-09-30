@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .error{
+        color: red;
+    }
+</style>
+<body>
+    <h3>Form Validation</h3>
+    <form onsubmit="return handleSubmit()">
+    <label>Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <span id="nameError" class="error"></span><br>
+    <label>Email:</label>
+    <input type="email" id="email" name="email"><br>
+    <span id="emailError" class="error"></span><br>
+    <label>Password:</label>
+    <input type="password" id="password" name="password"><br>
+    <span id="passwordError" class="error"></span><br>
+    <button type="submit">Submit</button>
+    </form>
+<script>
+    function handleSubmit(){
+        var name=document.getElementById('name').value
+        var nameError=document.getElementById('nameError')
+        var email=document.getElementById('email').value
+        var emailError=document.getElementById('emailError')
+        var password=document.getElementById('password').value
+        var passwordError=document.getElementById('passwordError')
+        var isValidate=true
+
+        function isValidate(email){
+            var result=/\S+@\S+\.\S+/  //S is the string or char
+            return result.test(email)
+        }
+        function hasEspecialChar(password){
+            var result=/[@!+*&%#''+-=]/
+            return result.test(password)
+        }
+        function hasCapitalLetters(password){
+            var result=/[A-Z]/
+            return result.test(password)
+        }
+        if (name==''){
+            nameError.textContent='Name is required'
+            isValidate=false
+        }else{
+            nameError.textContent=''
+        }
+        if (email==''){
+            emailError.textContent='Email is required'
+            isValidate=false
+        }else if(!isValidate(email)){
+            emailError.textContent='Invalid email'
+            isValidate=false
+        }else{
+            emailError.textContent=''
+        }
+
+        if(password==''){
+            passwordError.textContent='Password is required'
+            isValidate=false
+        }else if(password.length<8){
+            passwordError.textContent='Password length should not be lessthan 8 characters'
+            isValidate=false
+        }else if(!hasEspecialChar(password)){
+            passwordError.textContent='Passwod must contain one special characters'
+            isValidate=false
+        }else if(!hasCapitalLetters(password)){
+            passwordError.textContent='Password must contain atleast one capital letters'
+            isValidate=false
+        }else{
+            passwordError.textContent=''
+        }
+        return isValidate
+    }
+</script>
+</body>
+</html>

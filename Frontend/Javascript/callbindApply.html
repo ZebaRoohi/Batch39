@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Call,bind,apply</h3>
+    <p>Call: Invokes the function immediately and passes arguments one by one.</p>
+    <p>Apply:Invokes the function immediately and passes arguments as an array.</p>
+    <p>Bind:Returns a new function with this and arguments bound to the provided values, but does not invoke it immediately.</p>
+</body>
+<script>
+//call
+    let person1={
+        name:'John',
+        age:23
+    }
+    let person2={
+        name:'Harry',
+        age:28
+    }
+    function greeting(greet){
+        console.log(`Hi iam ${this.name} and my age is ${this.age} and ${greet}`)
+    }
+    greeting.call(person1,'hi')
+    greeting.call(person2,'hello')
+
+//apply
+    let person3={
+        firstName:'John',
+        lastName:'Doe'
+    }
+    let person4={
+        firstName:'Harry',
+        lastName:'Will'
+    }
+    function printDetails(job,country){
+        console.log(`Hi my name is ${this.firstName} ${this.lastName}  and my occupation is ${job} and Iam from ${country}`)
+    }
+    printDetails.apply(person3,["Engineer","UK"])
+    printDetails.apply(person4,["DOctor","USA"])
+
+//bind
+    let person5={
+        fName:'John',
+        lName:'Doe'
+    }
+    let person6={
+        fName:'Harry',
+        lName:'Will'
+    }
+    let person={
+        fName:'Alice',
+        lName:'Bob',
+        sayHi:function(){
+            return `${this.fName} ${this.lName}`
+        }
+    }
+    let obj1=person.sayHi.bind(person5)
+    let obj2=person.sayHi.bind(person6)
+    console.log(obj1())
+    console.log(obj2())
+</script>
+</html>
