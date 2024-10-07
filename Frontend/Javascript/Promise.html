@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Promises in JS</h3>
+    <p>Promises in JavaScript are a powerful tool for handling asynchronous operations. A Promise represents the eventual completion or failure of an asynchronous operation, and its resulting value</p>
+</body>
+<script>
+    const myPromise=new Promise((resolve,reject)=>{
+        let success=false;
+        if(success){
+            resolve('Request is fulfilled')
+        }else{
+            reject('Request is rejected')
+        }
+    })
+    //promise chaining
+    myPromise
+    .then(result=>console.log(result))
+    .catch(err=>console.log(err))
+
+//promise with resolve
+    const promiseRes=new Promise((res)=>{
+        res('resolved')
+    })
+    promiseRes
+    .then(result=>console.log(result))
+
+//promise with setTimeout
+    const promiseAsync=new Promise((res,rej)=>{
+        setTimeout(()=>{
+            let success=true;
+            if(success){
+                res('settimeout resolve')
+            }else{
+                rej('settimeout reject')
+            }
+        },3000)
+    })
+    promiseAsync
+    .then(result=>console.log(result))
+    .catch(err=>console.log(err))
+
+//Types of promises
+//1.promise.all--->This returned promise fulfills when all of the input's promises fulfill, It rejects when any of the input's promises rejects, with this first rejection reason.
+
+   const promise1=Promise.resolve(56)
+   const promise2=78
+   const promise3=new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('promise3 resolved')
+    },1000)
+   })
+   Promise.all([promise1,promise2,promise3])
+   .then(val=>console.log(val))
+
+//2.promise.any--->. This returned promise fulfills when any of the input's promises fulfills, with this first fulfillment value.It reject when any of the input values reject
+   const p1=Promise.reject(45)
+   const p2=56
+   const p3=new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('resolve with promise.any')
+    },1000)
+   })
+   Promise.any([p1,p2,p3])
+   .then(value=>console.log(value))
+
+//3.Promise.race-->all the promise should get resolve and the one with shorter time settle first
+   const pr1=new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('first')
+    },2000)
+   })
+
+   const pr2=new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('second')
+    },3000)
+   })
+   Promise.race([pr1,pr2])
+   .then(val=>console.log(val))
+   
+</script>
+</html>

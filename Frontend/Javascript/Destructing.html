@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Destructuring of arrays and objects</h3>
+    <p>Destructing in javascript basically means the breaking down of a complex structure(Objects or arrays) into simpler parts.</p>
+</body>
+<script>
+//array destructing...
+    const numbers=[1,2,3,4,5]
+    //dest
+    const[a,b,c,d]=numbers
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(d)
+
+//default values
+    const[x=1,y=5]=[10]
+    console.log(x)
+    console.log(y)
+
+//object dest
+    let person={
+        name:'John',
+        age:23,
+        city:'Hyd'
+    }
+    const{name,age,city}=person
+    console.log(name)
+    console.log(age)
+    console.log(city)
+
+//nested obj
+    let users={
+        namea:'Harry',
+        age:26,
+        address:{
+            citya:'Hyd',
+            country:'India'
+        }
+    }
+    const{namea,address:{citya,country}}=users
+    console.log(namea)
+    console.log(citya)
+    console.log(country)
+</script>
+</html>

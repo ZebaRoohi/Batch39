@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hoisting in Javascript</h3>
+    <p>
+ Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase. It's important to note that only the declarations are hoisted, not the initializations.</p>
+
+ <hr>
+ <p>Temporal Dead Zone:The area where your are trying to access the variable before the initalization is called TDZ</p>
+</body>
+<script>
+ //var 
+    console.log(a)
+    var a=10
+    console.log(a)
+
+//let
+    /*console.log(b) //Reference error:cannt access value before intialization
+    let b=20
+    console.log('let value=',b)*/
+
+//const
+    /*console.log(c) //Reference error:cannt access value before intialization
+    const c=30
+    console.log('const c=',c)*/
+
+//basic function declaration
+   console.log(greet())
+    function greet(){
+        return 'basic decalartion of function'
+    }
+    console.log(greet())
+
+//function decl with var
+    //console.log(greetVar())
+    console.log(greetVar) //undefined
+    var greetVar=function(){
+        return 'fucntion with var'
+    }
+    console.log(greetVar())
+
+//function with let
+    /*console.log(greetLet) //ReferenceErr
+    let greetLet=function(){
+        return 'function with let'
+    }
+    console.log(greetLet())*/
+
+//const function
+    console.log(greetConst)
+    const greetConst=function(){
+        return 'function with const'
+    }
+    console.log(greetConst())
+
+
+//TDZ....
+    console.log(x)
+    console.log(y)
+    //....this area is TDZ.....
+    let x=10;
+    const y=20
+    console.log(x)
+    console.log(y)
+</script>
+</html>
