@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Grid</title>
-    <style>
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .box {
-            background-color: lightsteelblue;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
-        <div class="box">Box 4</div>
-        <div class="box">Box 5</div>
-    </div>
+    
 </body>
+<script>
+let person = {
+  pid: "P101",
+  pname: "Alice",
+  paddress: {
+    city: "London",
+    country: "UK"
+  },
+  age: 30
+};
+
+// Create a deep copy using JSON.parse(JSON.stringify())
+let newPerson = JSON.parse(JSON.stringify(person));
+
+// Modify the nested object in the deep copy
+newPerson.paddress.city = "Paris";
+
+console.log("Person=> ", person);     
+// Output: 
+// { pid: 'P101', pname: 'Alice', paddress: { city: 'London', country: 'UK' }, age: 30 }
+
+console.log("New Person=> ", newPerson);
+// Output: 
+// { pid: 'P101', pname: 'Alice', paddress: { city: 'Paris', country: 'UK' }, age: 30 }
+
+
+</script>
 </html>

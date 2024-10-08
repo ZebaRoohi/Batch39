@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Currying</h3>
+    <p>Currying in JavaScript is a process in functional programming in which you can transform a function with multiple arguments into a sequence of nesting functions. It returns a new function that expects the next argument inline.  </p>
+</body>
+<script>
+  function multiply(a){
+    return function(b){
+        return function(c){
+            return a*b*c
+        }
+    }
+  }
+  console.log(multiply(2)(3)(4))
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Example of Rest and spread operator</h3>
+    <p>The rest parameter allows you to represent an indefinite number of arguments as an array.</p>
+    <p>The spread operator is used to expand elements of an array or properties of an object.</p>
+</body>
+<script>
+    //rest operator
+    const[a,b,c,d,...details]=[1,2,3,4,5,6,7,8,9,10]
+    console.log('a',a)
+    console.log('b',b)
+    console.log('c',c)
+    console.log('d',d)
+    console.log('details',details)
+
+    //rest with object
+    let person={
+        name:'John',
+        age:23,
+        address:'Hyd',
+        phone:6374634638
+    }
+    const{name,...info}=person
+    console.log('name',name)
+    console.log('informattion',info)
+
+    //rest with function
+    function greet(...name){
+        console.log('Hello'+name)
+    }
+    greet('John','Harry','Sam')
+
+//spread operator
+    const num1=[1,2,3]
+    const num2=[4,5,6]
+    const num=[...num1,...num2]
+    console.log('new numbers',num)
+
+    const num1_values=[...num1,8,9,10]
+    console.log('new values',num1_values)
+
+
+//spread with object
+    let users={
+        name:'john',
+        age:45
+    }
+    let values={
+        a:1,
+        b:2,
+        c:3
+    }
+    const obj={...users,...values}
+    console.log('object',obj)
+
+    const obj1={...users,city:'hyd',country:'india'}
+    console.log('obj1',obj1)
+    </script>
+</html>
